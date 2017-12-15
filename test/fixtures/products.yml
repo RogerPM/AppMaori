@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 1
+  purchase_price: 9.99
+  sale_price: 9.99
+  quantity: 1
+  minimun_quantity: 1
+  gain: 9.99
+  provider_id: 
+  type: 
+  state: false
+
+two:
+  name: 1
+  purchase_price: 9.99
+  sale_price: 9.99
+  quantity: 1
+  minimun_quantity: 1
+  gain: 9.99
+  provider_id: 
+  type: 
+  state: false

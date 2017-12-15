@@ -1,0 +1,121 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+            <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Nombres" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, autofocus: true, placeholder: "Nombres", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :last_name, "Apellidos" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :last_name, placeholder: "Apellidos", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :identification_card, "Cedula" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :identification_card, placeholder: "Cedula", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :email, "Correo electronico" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :email, placeholder: "Correo", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :address, "Direccion" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_area :address, placeholder: "Direccion", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :birthday, "Fecha de nacimiento" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.date_select :birthday, placeholder: "Fecha de nacimiento", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :phone, "Telefono" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :phone, placeholder: "Telefono", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :contract_date, "Fecha de contrato" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.date_select :contract_date, placeholder: "Fecha de contrato", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :contract_date_end, "Fecha culminacion" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.date_select :contract_date_end, placeholder: "Fecha fin de contrato", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :position, "Cargo" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :position, placeholder: "Cargo", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :state, "Estado" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :state, placeholder: "Estado", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

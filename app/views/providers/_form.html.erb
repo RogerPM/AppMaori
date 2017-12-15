@@ -1,0 +1,78 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(@provider) do |f| %>
+        <% if @provider.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+
+            <ul>
+            <% provider.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Nombres" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, autofocus: true, placeholder: "Nombres", class: "form-control" %>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :ruc, "Ruc" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :ruc, placeholder: "Ruc", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :phone, "Telefono" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :phone, placeholder: "Telefono", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :email, "Correo electronico" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :email, placeholder: "Correo", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :address, "Direccion" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_area :address, placeholder: "Direccion", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :state, "Estado" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :state, placeholder: "Estado", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

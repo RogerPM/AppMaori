@@ -1,0 +1,97 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(@membership) do |f| %>
+        <% if @membership.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(membership.errors.count, "error") %> prohibited this membership from being saved:</h2>
+
+            <ul>
+            <% membership.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :rate_name, "Nombre" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :rate_name, autofocus: true, placeholder: "Nombre del precio a mostrar", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :sessions, "Sesiones" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.number_field :sessions, placeholder: "dias totales de las sesiones", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :service_id, "Servicio" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.collection_select :service_id, @services, :id, :name,
+                  {selected: @membership.service_id, include_blank: 'Seleccione un servicio'}, 
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+
+       <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :days_expire, "Expira" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.number_field :days_expire, placeholder: "Dias que expira", class: "form-control"%>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :price, "Precio" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.number_field :price, placeholder: "Precio para la", class: "form-control" , :step => 0.01%>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :discount, "Descuento" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.number_field :discount, placeholder: "descuento de la membresia", class: "form-control" , :step => 0.01%>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :type, "Tipo" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.select :type, options_for_select([["Entrada diaria","diario"],["Por registro","entrada"],["Otro","otro"]]), placeholder: "Seleccione una entrada", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :state, "Tipo" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.select :state, options_for_select([["Habilitado","1"],["Deshabilitado","0"],["Otro","otro"]]), placeholder: "Seleccione un estado", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

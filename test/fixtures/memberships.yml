@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rate_name: MyString
+  sessions: 1
+  service_id: 
+  days_expire: 1
+  price: 9.99
+  discount: 9.99
+  type: 
+  state: false
+
+two:
+  rate_name: MyString
+  sessions: 1
+  service_id: 
+  days_expire: 1
+  price: 9.99
+  discount: 9.99
+  type: 
+  state: false

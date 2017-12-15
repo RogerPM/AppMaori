@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+ <div class="panel-heading">Proveedores</div>
+ <div class="panel-body">
+  <%= render partial: 'layouts/search_form', locals: { search_entity: 'providers', word: "Proveedores" } %>
+  
+  <br>
+  <div class="col-md-5 col-md-offset-5 col-sm-5 col-sm-offset-5">
+   <p>
+    <%= button_to new_provider_path, {method: :get, class: "btn btn-success"} do %>
+     <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Nuevo Proveedor
+    <% end %>
+   </p>
+  </div>
+ </div>
+ <%= render partial: 'result_search' %>
+</div>
